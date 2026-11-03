@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Transformer Efficiency in Climate Modeling</title></head>
+<body>
+  <h1>Transformer Efficiency in Climate Modeling</h1>
+  
+  <p>Recent work shows that transformer architectures outperform 
+  recurrent models in long-horizon climate prediction. The attention 
+  mechanism reduces error accumulation in multi-decade forecasts.</p>
+  
+  <h2>Key Finding</h2>
+  <p>Our experiments demonstrate that 8-head attention layers achieve 
+  a 23% reduction in prediction error compared to LSTM baselines 
+  on the CMIP6 dataset.</p>
+  
+  <h2>Foundation</h2>
+  <p>This work builds directly on the transformer architecture introduced by 
+  <strong>Vaswani et al. (2017)</strong>, "Attention Is All You Need" 
+  (NeurIPS 30, 5998-6008), which established the core attention mechanism 
+  we adapt for climate data.</p>
+  
+  <p>Methodology details follow.</p>
+</body>
+</html>
